@@ -1,3 +1,12 @@
+'''
+TouchDesigner Summit 2019
+Workshop | Large Systems
+
+Instructors 
+    Matthew Ragan https://matthewragan.com
+    Zoe Sandoval https://zoesandoval.com
+'''
+
 class Draw:
     '''
         The Draw class is specifically focused on the needs of setting up

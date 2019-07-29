@@ -1,3 +1,11 @@
+'''
+TouchDesigner Summit 2019
+Workshop | Large Systems
+
+Instructors 
+    Matthew Ragan https://matthewragan.com
+    Zoe Sandoval https://zoesandoval.com
+'''
 
 class Output:
     '''

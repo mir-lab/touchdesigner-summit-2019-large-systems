@@ -1,5 +1,7 @@
 # TouchDesigner Summit 2019 | Large Systems
 
+![](assets/repo-header.jpg)
+
 ## Artist Instructors
 Matthew Ragan | [matthewragan.com](https://matthewragan.com)  
 Zoe Sandoval | [zoesandoval.com](https://zoesandoval.com)  
@@ -61,6 +63,9 @@ You can download the save tox from here:
 
 
 ## Using Custom Parameters and Building Blueprints
+
+
+You can learn more about Custom Paramters here:  
 * [Elburz on Custom Pars](https://www.elburz.io/touchdesigner-beginner-tricks/)
 * [Custom Pars and Cue Building](https://matthewragan.com/2019/05/06/touchdesigner-case-study-custom-parameters-and-cues/)
 

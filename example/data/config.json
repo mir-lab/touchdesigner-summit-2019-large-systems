@@ -1,0 +1,121 @@
+{
+	"outputlists" : {
+		"solo_controller" : ["controller001"],
+		"solo_render001" : ["render001"],
+		"mixed_controller" :["controller001", "render001"]
+	},
+	"nodes" : {
+	    "render001":{
+			"channels": [	"chan001",
+							"chan002",
+							"chan003"
+						],
+	        "media_path": "D:\\",
+	        "role": "draw",
+	        "tox": "modules\\container_draw_node\\container_draw_node.tox"
+	    },
+	    "controller001":{
+	        "channels": [ "controller" ], 
+	        "media_path": "D:\\", 
+	        "role": "controller",
+	        "tox": "modules\\container_controller\\container_controller.tox"
+	    },  
+		"standby":{
+	        "config_id"     : null,
+	        "channels" 		: null, 
+	        "media_path"    : null, 
+	        "notes"         : null,  
+	        "role"          : "standby",
+	        "tox"           : null
+		},
+	    "guest":{
+	        "config_id"     : null,
+	        "channels" 		: null, 
+	        "media_path"    : null, 
+	        "notes"         : null,  
+	        "role"          : "standby",
+	        "tox"           : null
+	    }
+	},
+
+	"channels" : {
+		"chan001":{		
+			"width"         : 1280,
+			"height"        : 720,
+			"type"          : "led",
+			"orientation"   : 0 
+		},
+		"chan002":{		
+			"width"         : 1280,
+			"height"        : 720, 
+			"type"          : "projector",  
+			"orientation"   : 0
+		},
+		"chan003":{		
+			"width"         : 1280,
+			"height"        : 720, 
+			"type"          : "led",  
+			"orientation"   : 0
+		},
+		"controller":{		
+			"width"         : 1280,
+			"height"        : 720,
+			"type"          : "lcd", 
+			"orientation"   : 0
+		}	
+    },
+    
+    "channel_type" :{
+        "lcd"               : {
+            "tox"           : "modules\\_blueprints\\container_lcd\\container_lcd.tox"
+        },
+        "led"               : {
+            "tox"           : "modules\\_blueprints\\container_ledwall\\container_ledwall.tox"
+        },
+        "projector"         :  {
+            "tox"           : "modules\\_blueprints\\container_projector\\container_projector.tox"
+        }
+    },
+
+	"output_devices" : {
+	    "projector001" : {
+			"ip_address" 	: "192.100.100.1",
+			"channel"		: 1,
+			"manufacturer" 	: "christie",
+			"model" 		: null,
+			"api_version" 	: null, 
+			"notes" 		: null
+		}
+	},
+
+	"machines" : {
+		"job-primary01"	: {
+			"role"					: "render001",
+			"primary"				: true,
+			"sync-media"			: true,
+			"status-order"			: 3,
+			"expect-heart-beat"		: true
+		},
+		"job-backup01"	: {
+			"role"					: "render001",
+			"primary"				: false,
+			"sync-media"			: true,
+			"status-order"			: 4,
+			"expect-heart-beat"		: true
+		},		
+		"job-primary-controller" : {
+			"role"					: "controller001",
+			"primary"				: true,
+			"sync-media"			: true,
+			"status-order"			: 1,
+			"expect-heart-beat"		: true
+		},
+		"job-backup-controller"	: {
+			"role"					: "controller001",
+			"primary"				: false,
+			"sync-media"			: true,
+			"status-order"			: 2,
+			"expect-heart-beat"		: true
+		}
+	}
+}

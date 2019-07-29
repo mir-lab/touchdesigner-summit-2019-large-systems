@@ -23,16 +23,18 @@ Time | Topic
 
 
 ## Intro & Why Externalize 
-
+* [TouchDesigner and Version Control](https://matthewragan.com/2017/12/03/touchdesigner-working-styles-git/)
 
 ## Organizing Your Project
 
 
 ## Blueprints + the Save Tox
+* [TouchDesigner-save-external](https://github.com/raganmd/touchdesigner-save-external)
 
 
 ## Using Custom Parameters
-
+* [Elburz on Custom Pars](https://www.elburz.io/touchdesigner-beginner-tricks/)
+* [Custom Pars and Cue Building](https://matthewragan.com/2019/05/06/touchdesigner-case-study-custom-parameters-and-cues/)
 
 ## Automation Example - Displays
 

@@ -35,7 +35,8 @@ class Output:
         self.MyOp               = myOp
         self.Dimensions_table   = op('table_dimensions')
         self.Export_header      = ['path', 'parameter', 'value', 'enable']      
-        
+        self.Do_not_delete_tag  = 'keep'
+
         init_msg = 'Output Class Init from {}'.format(myOp)
         print(init_msg)     
         pass
@@ -62,6 +63,15 @@ class Output:
         print("Touch_start complete from Output | {}".format(self.MyOp))
         pass
 
+    def Reset_network(self):
+        # prep table for exporting sizes
+        self.Dimensions_table.clear()
+        self.Dimensions_table.appendRow(self.Export_header)
+
+        # cleanup
+        parent().Delete_old_ops(self.MyOp, self.MyOp)
+        pass
+
     def Create_nodes(self):
         '''
             Here we create all nodes in our output list.
@@ -86,15 +96,11 @@ class Output:
         outputlists         = op.Project.fetch('outputlists')
         comp_width_list     = []
         comp_height_list    = []
-        new_node_x_pos = 0
+        new_node_x_pos      = 0
+        export_list         = []
 
-        # prep table for exporting sizes
-        self.Dimensions_table.clear()
-        export_list = []
-        export_list.append(self.Export_header)
-        
-        # cleanup
-        self.Delete_old_ops(parent(), self.MyOp)
+        # prep network
+        self.Reset_network()
 
         # loop through config_outputlist
         for each in enumerate( outputlists[config_outputlist] ):
@@ -167,7 +173,7 @@ class Output:
         
         # loop through and destory old comps, passing over those with the tag "keep"
         for each_old_comp in old_comps:
-            if 'keep' in each_old_comp.tags:
+            if self.Do_not_delete_tag in each_old_comp.tags:
                 pass
             else:
                 each_old_comp.destroy()

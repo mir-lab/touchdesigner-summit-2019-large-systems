@@ -60,6 +60,15 @@ class Draw:
         print("Startup process from Draw Node | {}".format(self.MyOp))
         pass
     
+    def Reset_network(self):
+        # prep table for exporting sizes
+        self.Dimensions_table.clear()
+        self.Dimensions_table.appendRow(self.Export_header)
+
+        # cleanup
+        parent(2).Delete_old_ops(self.MyOp, self.MyOp)
+        pass
+
     def Create_nodes(self):
         '''
             Here we create all nodes in our output list.
@@ -85,14 +94,10 @@ class Draw:
         node_channels   = op.Project.fetch('nodes')[node]['channels']
         channels        = op.Project.fetch('channels')
         channel_types   = op.Project.fetch('channel_type')
+        export_list     = []
 
-        # prep table for exporting sizes
-        self.Dimensions_table.clear()
-        export_list = []
-        export_list.append(self.Export_header)
-
-        # cleanup
-        parent(2).Delete_old_ops(self.MyOp, self.MyOp)
+        # prep network
+        self.Reset_network()
 
         # loop through and create new channels
         new_node_x_pos = 0
@@ -118,6 +123,12 @@ class Draw:
             new_node.par.alignorder     = channel_order
             new_node.nodeX              = new_node_x_pos
             new_node_x_pos              += 200
+
+            # set random color for border
+            rbg_sample                  = "op.Data.op('null_rand_color').sample(x={}, y=0)[{}]"
+            new_node.par.Borderr.expr   = rbg_sample.format(channel_order, 0)
+            new_node.par.Borderg.expr   = rbg_sample.format(channel_order, 1)
+            new_node.par.Borderb.expr   = rbg_sample.format(channel_order, 2)
 
         # fill in the export table with resolutions
         for each_item in export_list:

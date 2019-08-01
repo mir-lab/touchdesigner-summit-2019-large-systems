@@ -67,7 +67,7 @@ class Project:
         op('container_output').Touch_start()
         pass
 
-    def Store_ip_info(self):
+    def Store_ip_info(self, host=socket.gethostname(), ip=socket.gethostbyname(socket.gethostname())):
         '''
             Helper function stores ip info about our computer
             
@@ -76,14 +76,20 @@ class Project:
             
             Args
             ---------
-            none
+            host (str):
+            > the string host name for the computer.
+            > Default value is from socket.gethostname()
+            
+            ip (str):
+            > the string ip address for the computer.
+            > Default value is from socket.gethostbyname(socket.gethostname())
 
             Returns
             ---------
             none		
         '''
-        self.MyOp.store('ip_address', socket.gethostbyname(socket.gethostname()) )
-        self.MyOp.store('host_name', socket.gethostname())
+        self.MyOp.store('host_name', host)
+        self.MyOp.store('ip_address', ip)
         pass
 
     def Load_store_json(self, targetOp, file):

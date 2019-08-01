@@ -1,8 +1,8 @@
 {
 	"outputlists" : {
-		"solo_controller" : ["controller001"],
-		"solo_render001" : ["render001"],
-		"mixed_controller" :["controller001", "render001"]
+		"solo_controller" 	: ["controller001"],
+		"solo_render001" 	: ["render001"],
+		"mixed_controller" 	: ["controller001", "render001"]
 	},
 	"nodes" : {
 	    "render001":{
@@ -55,6 +55,12 @@
 			"width"         : 1280,
 			"height"        : 720, 
 			"type"          : "led",  
+			"orientation"   : 0
+		},
+		"chan004":{		
+			"width"         : 1280,
+			"height"        : 720, 
+			"type"          : "projector",  
 			"orientation"   : 0
 		},
 		"controller":{		

@@ -12,13 +12,13 @@
 						],
 	        "media_path": "D:\\",
 	        "role": "draw",
-	        "tox": "modules\\container_draw_node\\container_draw_node.tox"
+	        "tox": "modules/container_draw_node/container_draw_node.tox"
 	    },
 	    "controller001":{
 	        "channels": [ "controller" ], 
 	        "media_path": "D:\\", 
 	        "role": "controller",
-	        "tox": "modules\\container_controller\\container_controller.tox"
+	        "tox": "modules/container_controller/container_controller.tox"
 	    },  
 		"standby":{
 	        "config_id"     : null,
@@ -73,13 +73,13 @@
     
     "channel_type" :{
         "lcd"               : {
-            "tox"           : "modules\\_blueprints\\container_lcd\\container_lcd.tox"
+            "tox"           : "modules/_blueprints/container_lcd/container_lcd.tox"
         },
         "led"               : {
-            "tox"           : "modules\\_blueprints\\container_ledwall\\container_ledwall.tox"
+            "tox"           : "modules/_blueprints/container_ledwall/container_ledwall.tox"
         },
         "projector"         :  {
-            "tox"           : "modules\\_blueprints\\container_projector\\container_projector.tox"
+            "tox"           : "modules/_blueprints/container_projector/container_projector.tox"
         }
     },
 

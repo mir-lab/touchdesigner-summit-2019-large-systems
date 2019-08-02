@@ -130,6 +130,9 @@ class Draw:
             new_node.par.Borderg.expr   = rbg_sample.format(channel_order, 1)
             new_node.par.Borderb.expr   = rbg_sample.format(channel_order, 2)
 
+            # set paths for media
+            # new_node.par.Texturesource  = op('../base_assets/null_{}'.format(each_channel))
+
         # fill in the export table with resolutions
         for each_item in export_list:
             self.Dimensions_table.appendRow(each_item)

@@ -1,0 +1,67 @@
+{
+	"outputlists" : {
+		"solo_controller" 	: ["controller001"],
+		"solo_render001" 	: ["render001"]
+	},
+	"nodes" : {
+		"render001":{
+			"channels": [	"chan001",
+							"chan002",
+							"chan003"
+						],
+			"media_path": "D:\\",
+			"role": "draw",
+			"tox": "modules/container_draw_node/container_draw_node.tox"
+		},
+		"controller001":{
+			"channels": [ "controller" ], 
+			"media_path": "D:\\", 
+			"role": "controller",
+			"tox": "modules/container_controller/container_controller.tox"
+		}
+	},
+
+	"channels" : {
+		"chan001":{		
+			"width"         : 1280,
+			"height"        : 720,
+			"type"          : "projector",
+			"orientation"   : 0 
+		},
+		"chan002":{		
+			"width"         : 1280,
+			"height"        : 720, 
+			"type"          : "projector",  
+			"orientation"   : 0
+		},
+		"chan003":{		
+			"width"         : 1280,
+			"height"        : 720, 
+			"type"          : "projector",  
+			"orientation"   : 0
+		},
+		"controller":{		
+			"width"         : 1280,
+			"height"        : 720,
+			"type"          : "projector", 
+			"orientation"   : 0
+		}	
+    },
+    
+    "channel_type" :{
+        "projector"         :  {
+            "tox"           : "modules/_blueprints/container_projector/container_projector.tox"
+        }
+    },
+
+	"output_devices" : {
+		"projector001" : {
+			"ip_address" 	: "192.100.100.1",
+			"channel"		: 1,
+			"manufacturer" 	: "christie",
+			"model" 		: null,
+			"api_version" 	: null, 
+			"notes" 		: null
+		}
+	}
+}

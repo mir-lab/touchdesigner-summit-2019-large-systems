@@ -30,6 +30,11 @@ How you design, plan, and extend a system is a both an engineering and creative 
 
 Over the course of this workshop we'll take a look a fundamental concepts for this kind of work - What is externalization, why do it in the first place, and how much is too much. We'll also look at some perspectives about organization that come from building large projects, what it means to build templates / blueprints that you can reuse, how to take advantage of some simple automation, and where you can begin to take advantage of some more advanced ideas. 
 
+### Major Goals
+* **No delay scripts** unless there is no other solution
+* Complete control over initialization and load order
+* Text-port confirmation of each step (ultimately you want this to be a log-file)
+
 ## Intro & Why Externalize 
 Externalizing toxes is a great way to build some modular segmentation into your workflow, but why does it matter? It seems like a lot of extra work, and aside from being a "best practice" why bother? Those are great questions, and reasonable concerns. What I see most often here is that when we're first getting started with Touch it's easy to only work in a single project. Maybe there are some killer pieces in that project, and when we start another one, we copy the whole toe file and then hack it all apart and move it all around. It's easy to do this, and fast... but at some point you'll wonder where that one great feature was that you built for that one project. Because toe files are [binary](https://en.wikipedia.org/wiki/Binary_file) it's not easy to compare them - in fact it's very difficult. So what can you do? Well, you can open them up one at a time until you find the right file. Then you have to figure out how to separate out the bits you want from all the other stuff. Once you manage to do that you realize you may have been better off just writing all from scratch again. 
 
@@ -65,7 +70,7 @@ An example of a tool we can take a look at is a little handy saving mechanism to
 You can download the save tox from here:  
 * [TouchDesigner-save-external](https://github.com/raganmd/touchdesigner-save-external)
 
-## Using Custom Parameters and Building Blueprints
+## Using Custom Parameters & Building Blueprints
 Working with Custom Parameters is really a game changer for TouchDesigner. These made for monumental leaps in building components without having to write a complex Python interface, or create a control panel - both of which could be major time commitments. We wont cover the whole gamut of pieces that come along with using custom parameters, but we will take a little time to understand how we can best take advantage of them when building something like blueprints.
 
 What's a blueprint? In this context, we can think of a blueprint as a code block that has all of the scaffolding that we need for a particular job. We'll specifically be looking at displays, and how we think about creating pieces for different types of outputs. The handles you need for controlling a projector are a little different than what you think of for a projector. The big picture here, however, is we want to think of these modules as being general enough to be applied in many use cases, and to have any needed parameters exposed at the top level as Custom Parameters. In an ideal world, we NEVER reach into this component, and any change we make inside is something that all other instances of this component will have. This concept is already familiar to us in Touch as Clones, and what we're up to here is very similar.
@@ -74,7 +79,7 @@ You can learn more about Custom Paramters here:
 * [Elburz on Custom Pars](https://www.elburz.io/touchdesigner-beginner-tricks/)
 * [Custom Pars and Cue Building](https://matthewragan.com/2019/05/06/touchdesigner-case-study-custom-parameters-and-cues/)
 
-## Automation Example - Displays
+## Automation Example - Config & Displays
 To really dig down to the nitty gritty we'll take a look at how some of this works when writing a custom automation script. This will be similar to what we might do with a replicator COMP, but instead we'll end up with full control of how we set-up, place, name, and initialize our pieces. Digging deep here will give us some better insight into what the automation process looks like, as well as the concepts you need for applying these same ideas to other pieces in your projects. As a bonus we'll walk away from this portion of the workshop being able to re-configure our project just by altering a text file. That might not seem rad, but it means faster setup, configuration, and freedom from all of the fussy parts of getting a configuration ready either for a permanent installation, or for a VJ set. 
 
 ## Python Inheritance - Going to the Next Level

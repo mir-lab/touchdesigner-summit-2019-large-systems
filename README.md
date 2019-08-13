@@ -10,6 +10,11 @@ Materializing Interactive Research | [mir.works](https://mir.works)
 ## Dependencies
 * [TouchDesigner099](https://www.derivative.ca/099/Downloads/)
 
+## Recommended Tools
+Having an external text editor is key to lots of work in Touch. I like VS Code these days, though Submlime is also a solid choice
+* [VS Cide](https://code.visualstudio.com/)
+* [Sublime Text](https://www.sublimetext.com/)
+
 ## Schedule
 Time | Topic
 ---- | ----

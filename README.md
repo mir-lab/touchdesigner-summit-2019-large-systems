@@ -22,7 +22,6 @@ Time | Topic
 3:00 pm | Organizing Your Project & The Save Tox
 3:30 pm | Using Custom Parameters & Building Blueprints
 4:30 pm | Automation Example - Config & Displays
-
 5:30 pm | Python Inheritance - Going to the Next Level
 6:00 pm | Wrap
 

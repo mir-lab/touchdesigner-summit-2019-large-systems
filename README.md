@@ -14,10 +14,9 @@ Materializing Interactive Research | [mir.works](https://mir.works)
 Time | Topic
 ---- | ----
 2:30 pm | Intro & Why Externalize 
-3:00 pm | Organizing Your Project
-3:30 pm | The Save Tox
-4:00 pm | Using Custom Parameters and Building Blueprints
-4:30 pm | Automation Example - Displays
+3:00 pm | Organizing Your Project & The Save Tox
+3:30 pm | Using Custom Parameters & Building Blueprints
+4:30 pm | Automation Example - Config & Displays
 5:30 pm | Python Inheritance - Going to the Next Level
 6:00 pm | Wrap
 

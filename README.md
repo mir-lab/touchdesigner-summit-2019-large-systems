@@ -1,4 +1,4 @@
-# TouchDesigner Summit 2019 | Large Systems
+# TouchDesigner Summit 2019 | Modular Architectures & Large Systems
 
 ![](assets/repo-header.jpg)
 
@@ -11,8 +11,8 @@ Materializing Interactive Research | [mir.works](https://mir.works)
 * [TouchDesigner099](https://www.derivative.ca/099/Downloads/)
 
 ## Recommended Tools
-Having an external text editor is key to lots of work in Touch. I like VS Code these days, though Submlime is also a solid choice
-* [VS Cide](https://code.visualstudio.com/)
+Having an external text editor is key to lots of work in Touch. I like VS Code these days, though Sublime is also a solid choice
+* [VS Code](https://code.visualstudio.com/)
 * [Sublime Text](https://www.sublimetext.com/)
 
 ## Schedule

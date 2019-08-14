@@ -15,6 +15,19 @@ Having an external text editor is key to lots of work in Touch. I like VS Code t
 * [VS Code](https://code.visualstudio.com/)
 * [Sublime Text](https://www.sublimetext.com/)
 
+## Before the Workshop
+Before we meet there are a few things to make sure you’ve got in place. Here’s a quick run down of the pieces to make sure are in order before the workshop.
+
+**Required**
+* Make sure you’ve updated to the most recent stable build of TouchDesigner 099
+* Download the github repo linked above. We’ll be working with some files that are already set-up so we don’t have to make everything from scratch so it will be important to have these elements in place.
+* Make sure you have your laptop charger packed in your bag.
+
+**Suggested**
+* Download and install a text editor - you don’t need this, but it sure will be helpful
+* Reflect on the projects you’ve worked on in the past, and bring some questions about the problems you’ve encountered.
+* Don’t forget your three button mouse ;)
+
 ## Schedule
 Time | Topic
 ---- | ----
@@ -88,54 +101,9 @@ Finally, we'll wrap the day with a look at some OOP concepts that you can use to
 ## Other Considerations
 Another bit that's worth thinking about is if you're going to be running on systems with multiple GPUs. On those systems you have to set your GPU affinity at start. Derivative recommends doing this with a `.bat` or .`cmd` file. The trick for us here is that our schema of using a separate python file to indicate our indication will break - in the case of using a system with multiple GPUs, you likely want those two networks configured slightly differently. We can address this by using environment variables instead of a stand alone .json file. Depending on your workflow you might want to move this direction generally, but it's a little more advanced than we have time to cover in this workshop. 
 
-While we might not have time to go into detail in the workshop, we can leave this little reference here so you can come back to this part when you're ready to push a little harder on start-up configuration. The big idea is that rather than using that `outputlist.json` file to tell us how to configure our project, we can instead use environmnet variables. Touch will read environment variables that are called before the appliaction starts with the Python syntax:  
-`var.("my_var_name")`  
-We'd have to re-arrange a little logic in our project, but once we did that we'd be able to set our project's configuration from another script at start-up. You could do this eithe with a `.cmd` script or with Python script. For the more advanced users, if you have another watch application keeping tabs on your Touch project you'd want to add a mechanism to set an environment variable before starting the target application. 
-
-Here's a quick run down of what this might look like if you're running a batch script or a python script.
-
-Setting environment variables in a windows batch script
-```bat
-:: echo
-:: Display messages on screen, turn command-echoing on or off.
-
-:: "%~dp0"
-:: The %~dp0 (that's a zero) variable when referenced within a Windows batch file will expand to 
-:: the drive letter and path of that batch file. The variables %0-%9 refer to the command line 
-:: parameters of the batch file. %1-%9 refer to command line arguments after the batch file name. 
-:: %0 refers to the batch file itself.
-
-:: as a note this CMD or BAT needs to run as admin in order to work correctly
-
-@echo off
-
-set STARTUP=controller
-timeout /t 1
-start "%programfiles%\derivative\touchdesigner099\bin\touchdesigner099.exe" "%~dp0\env-vars.toe"
-
-set STARTUP=node
-timeout /t 1
-start "%programfiles%\derivative\touchdesigner099\bin\touchdesigner099.exe" "%~dp0\env-vars.toe"
-```
-
-Setting environment variables with Python
-```python
-import os
-
-toe_file = 'path\\to\\your\\file.toe'
-
-# set environment variable
-toe_env_var             = 'controller'
-os.environ['STARTUP']   = toe_env_var
-os.startfile(toe_file)
-print("startting file with {}".format(toe_env_var))
-
-# set environment variable
-toe_env_var             = 'node'
-os.environ['STARTUP']   = toe_env_var
-os.startfile(toe_file)
-print("startting file with {}".format(toe_env_var))
-```
+We don't have time to go into detail in the workshop, but if you want to learn more you can check out:
+* [Config with Environment Variables](https://github.com/raganmd/touchdesigner-config-with-env-vars)
+* [Blog walkthrough of using Env Vars with Touch](https://matthewragan.com/2019/08/05/touchdesigner-start-up-configuration-with-environment-variables/)
 
 ## Wrap
 By the end of the workshop we should have converged a whole host of concepts. From the abstract and conceptual frames that help us plan out our work, to the nitty gritty process of writing our extensions we'll do a little bit of all of it. Our hope is that you'll walk away from this workshop not only with an idea of how to start approaching your large projects, but also how to better create modular approaches that help you stop repeating yourself from project to project.

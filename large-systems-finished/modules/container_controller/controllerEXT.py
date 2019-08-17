@@ -42,6 +42,4 @@ class Controller:
             none		
         '''   
         print("Startup process from Controller | {}".format(self.MyOp))
-
-        parent(2).Delete_old_ops(self.MyOp, self.MyOp)
         pass

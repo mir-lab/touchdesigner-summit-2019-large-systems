@@ -89,7 +89,7 @@ class Draw:
             none		
         ''' 
         # set up all the variables for this process
-        node            = op.Project.fetch('role')
+        node            = parent().fetch('node')
         config          = op.Project.fetch('nodes')[node]
         node_channels   = op.Project.fetch('nodes')[node]['channels']
         channels        = op.Project.fetch('channels')

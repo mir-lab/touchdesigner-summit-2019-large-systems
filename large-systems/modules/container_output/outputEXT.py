@@ -137,6 +137,9 @@ class Output:
             export_list.append(['..', 'w', sum(comp_width_list), 1])
             export_list.append(['..', 'h', max(comp_height_list), 1])
 
+            # store node role for new node
+            new_node.store('node', each_node)
+
             # kickoff initialization on new object
             new_node.Touch_start()
 

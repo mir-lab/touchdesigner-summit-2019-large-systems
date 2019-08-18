@@ -56,13 +56,18 @@ class Project:
             ---------
             none		
         '''
+        print('Touch_start() for Project \n')
         # load our settings
+        print('########### LOAD CONFIG FILES ############')
         self.Load_config()
         self.Load_outputlist()
+        print('##########################################')
+        print('\n')
 
         # store our ip info
         self.Store_ip_info()
 
+        print('Start Output Setup\n')
         # init modules by calling Touch_start()
         op('container_output').Touch_start()
         pass
